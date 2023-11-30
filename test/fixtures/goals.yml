@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal_type: MyText
+  target_value: 1
+  current_value: 1
+  daily_calorie_goal: 1
+  workout: one
+  meal: one
+
+two:
+  goal_type: MyText
+  target_value: 1
+  current_value: 1
+  daily_calorie_goal: 1
+  workout: two
+  meal: two

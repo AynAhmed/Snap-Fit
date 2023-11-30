@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  log_date: 2023-11-30
+  name: MyText
+  met: 1
+  duration_min: 1
+  nf_calories: 1
+  exercise_type: MyText
+  photo_thumb_url: MyText
+  user_id: 1
+
+two:
+  log_date: 2023-11-30
+  name: MyText
+  met: 1
+  duration_min: 1
+  nf_calories: 1
+  exercise_type: MyText
+  photo_thumb_url: MyText
+  user_id: 1
