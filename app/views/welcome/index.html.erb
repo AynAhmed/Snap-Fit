@@ -1,6 +1,8 @@
+<!-- app/views/welcome/index.html.erb -->
+
+<%= image_tag("logo.png", alt: "Fitness App Logo") %>
+
 <% if user_signed_in? %>
-  <p>Welcome, <%= current_user.first_name %>!</p>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= link_to 'Sign In', new_user_session_path %>
+  <%= link_to 'Get Started', new_user_registration_path, class: 'btn btn-primary' %>
 <% end %>

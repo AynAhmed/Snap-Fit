@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   devise_for :users
   get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,9 +10,11 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
 
-  resources :meals, only: [:index, :create, :show, :destroy]
+  get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+
+  resources :meals, only: [:index, :create, :show, :update, :destroy]
   resources :workouts, only: [:index, :create, :show, :update, :destroy]
-  resources :goals, only: [:index]
+  resources :goals, only: [:new, :create, :edit, :update, :show, :index]
 
 
   # Defines the root path route ("/")
