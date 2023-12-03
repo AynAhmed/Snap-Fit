@@ -19,12 +19,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_075544) do
     t.integer "target_value"
     t.integer "current_value"
     t.integer "daily_calorie_goal"
-    t.bigint "workout_id", null: false
-    t.bigint "meal_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["meal_id"], name: "index_goals_on_meal_id"
-    t.index ["workout_id"], name: "index_goals_on_workout_id"
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -76,7 +74,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_075544) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "goals", "meals"
-  add_foreign_key "goals", "workouts"
+  add_foreign_key "goals", "users"
   add_foreign_key "meals", "users"
 end

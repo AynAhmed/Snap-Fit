@@ -1,17 +1,28 @@
-<%= form_with(model: goal) do |form| %>
-  <% if goal.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+<!-- app/views/goals/_form.html.erb -->
+<div>Welcome <%= current_user.first_name.capitalize %>!</div>
 
-      <ul>
-        <% goal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: goal, url: goals_path, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :goal_type %>
+    <%= form.select :goal_type, ['Lose weight', 'Gain weight', 'Maintain weight', 'Gain muscle'] %>
+  </div>
 
-  <div>
+  <div class="field">
+    <%= form.label :target_value %>
+    <%= form.text_field :target_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_value %>
+    <%= form.text_field :current_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :daily_calorie_goal %>
+    <%= form.text_field :daily_calorie_goal %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
