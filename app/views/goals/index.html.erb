@@ -1,7 +1,27 @@
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
+
 <p style="color: green"><%= notice %></p>
 
 <!-- app/views/goals/index.html.erb -->
-<h1>Create a New Goal</h1>
 
-<%= render "form", goal: @goal %>
 
+
+<% @goals.each do |goal| %>
+    <p><strong>Goal Type</strong></p>
+    <%= goal.goal_type %>
+    <p><strong>Weight Goal</strong></p>
+    <%= goal.target_value %>
+    <p><strong>Weight Currently</strong></p>
+    <%= goal.current_value %>
+    <p><strong>Your Daily Calorie Goal</strong></p>
+    <%= goal.daily_calorie_goal %>
+<% end %>
+
+
+<h2>Motivation Oasis</h2> 

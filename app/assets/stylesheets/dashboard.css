@@ -1,0 +1,127 @@
+/* Dashboard Styling */
+/* Dashboard.css */
+/* Dashboard Styling */
+/* Dashboard.css */
+/* Dashboard Styling */
+/* Dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nanum+Brush+Script&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+.DailySummaryCard {
+    border: 2px solid black;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    background-color: #F8E6A6;
+  }
+  
+  .DailySummaryCard .GreetUserMessage {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  
+  .dailySumTitle {
+    text-align: center;
+  }
+  
+  .remainingCal {
+    font-weight: bold;
+  }
+
+  .btnCard {
+    display: flex;
+    justify-content: center; 
+
+    margin-top: 20px;
+
+    text-align: center;
+
+  }
+  /* div .btnCard .workoutbtn{
+    margin-left: 185px;
+  }
+  div .btnCard .mealbtn{
+    margin-right: 185px;
+  } */
+
+  .btnCard  .workoutbtn,
+  .btnCard  .mealbtn {
+    border-radius: 5px;
+    background-color: #bcc061;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px 171px;
+  }
+
+    .btnCard  .workoutbtn:hover, .btnCard  .mealbtn:hover {
+    background-color: #e0e2b8;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: background-color 0.5s ease;
+
+  }
+
+  .DailySummaryCard{
+    background-color: white;
+  }
+
+  .caloriesTable {
+    font-size: 33px;
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .caloriesTable th, .caloriesTable td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .caloriesTable th {
+    background-color: #c3d8db;
+
+  }
+
+  .table {
+    border-radius: 8px;
+  }
+
+  .summaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  .summaryTable td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .summaryTable td:first-child {
+    font-weight: bold;
+    width: 40%;
+  }
+
+  .summaryTable td:last-child {
+    text-align: right;
+  }
+  .DailySummaryCard {
+    position: relative;
+
+  }
+  .weightInIcon {
+    position: absolute;
+    right: 0;
+    font-size: 1.7em; /* Adjust the font size as needed */
+   margin-right: 37px;
+   margin-bottom: 30px;
+  }
+  .GreetUserMessage p {
+    margin-bottom: 30px;
+  }

@@ -1,3 +1,6 @@
 class Meal < ApplicationRecord
   belongs_to :user
-end
+
+  attribute :compendium_code, :integer
+  
+end 

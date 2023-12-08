@@ -1,0 +1,25 @@
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
+<!-- app/views/workouts/_form.html.erb -->
+<h1>Add A New Workout</h1>
+<%= form_with(model: @workout, url: workouts_path, method: :post) do |form| %>
+    <div class="field">
+    <%= form.label :For %>
+    <%= form.hidden_field :log_date, value: Date.current %>
+    <span><%= Date.current %></span>
+ </div>
+
+<div>
+    <%= form.label :user_input, "Enter your workout:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "e.g., swam for 1 hour and ran for 30 minutes" %>
+  </div>
+
+
+  <%= form.submit "Log Workout" %>
+<% end %>

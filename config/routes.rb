@@ -12,8 +12,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard'
 
-  resources :meals, only: [:index, :create, :show, :update, :destroy]
-  resources :workouts, only: [:index, :create, :show, :update, :destroy]
+  resources :meals
+  resources :workouts
+  
   resources :goals, only: [:new, :create, :edit, :update, :show, :index]
 
 

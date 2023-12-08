@@ -1,0 +1,64 @@
+/* General Styling  */
+/* styles.css */
+/* font - brush style */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+body{
+    background-color:#f0e7db;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: larger;
+}
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+  }
+  
+  .navbar li {
+    margin-left: 25px; /* Optional: Adjust spacing between items */
+    margin-top: 1px;
+    font-size: 25px;
+}
+  
+  .navbar li a {
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar li a:hover {
+    color: #7F7ECB;
+    text-decoration: underline;
+  }
+  
+  .navbar .sign-btn {
+    float: right;
+    margin-top: 8px;
+  }
+  
+.navbar .sign-btn {
+    margin-left: 2rem;
+    margin-right: 7px;
+    padding: 4px 15px;
+    background-color: white;
+    color: rgb(30, 30, 30);
+    border: black solid 2px;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .sign-btn{
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  .navbar .sign-btn:hover {
+    background-color: #000000;
+    color:white;
+    
+  }
+

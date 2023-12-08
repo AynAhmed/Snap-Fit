@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_075544) do
 
   create_table "meals", force: :cascade do |t|
     t.text "food_name"
-    t.text "serving_qty"
+    t.integer "serving_qty"
     t.text "serving_unit"
     t.decimal "nf_calories"
     t.decimal "nf_saturated_fat"
@@ -39,8 +39,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_075544) do
     t.decimal "nf_protein"
     t.decimal "nf_potassium"
     t.text "photo_thumb_url"
+    t.text "photo_highres_url"
     t.date "log_date"
     t.text "meal_type"
+    t.text "user_input"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,11 +66,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_075544) do
   create_table "workouts", force: :cascade do |t|
     t.date "log_date"
     t.text "name"
-    t.integer "met"
+    t.float "met"
+    t.text "user_input"
     t.integer "duration_min"
-    t.integer "nf_calories"
-    t.text "exercise_type"
-    t.text "photo_thumb_url"
+    t.float "nf_calories"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

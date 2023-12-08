@@ -1,0 +1,86 @@
+/*  meals/index Styling  */
+/* meals_index.css */
+
+
+
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  
+  table.mealTable {
+    width: 80%;
+    margin: 20px auto;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Add border-radius */
+    border: solid black 2px;
+    overflow: hidden; /* Ensure border-radius is applied to the overflow content */
+  }
+    
+  table.mealTable th, table.mealTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  table.mealTable th {
+    background-color: #e0e2b8;
+  }
+
+  table.mealTable tbody{
+    background-color: white;
+  }
+  table.mealTable tbody tr:hover {
+    background-color: #f4e3c0;
+  }
+
+  table.mealTable td a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .new-meal-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .newMealBtn {
+    display: block;
+    margin: 20px auto;
+    background-color: #bcc061;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    border: solid black 2px;
+    text-align: center;
+    width: 80%; /* Same width as the table */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+  .newMealBtn:hover{
+    background-color: #e0e2b8;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+
+
+  .table-photo-cell {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center; /* Center the image in the cell */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+  }

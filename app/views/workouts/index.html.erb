@@ -1,2 +1,32 @@
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
 
-<h1>hello</h1>
+<!-- app/views/workouts/index.html.erb -->
+<h1>Workouts Entries</h1>
+  <div>
+  
+  <%= button_to "Add workouts", new_workout_path, method: :get %>
+  
+  </div>
+
+<% @workouts.each do |workout| %>
+  <div>
+    <strong><%= workout.log_date %></strong>
+    <strong><%= workout.name %></strong>
+    <p>Duration: <%= workout.duration_min %> minutes</p>
+    <p>Calories burned: <%= workout.nf_calories %></p>
+    <p>MET: <%= workout.met %></p>
+    <p>Calories burned: <%= workout.nf_calories %></p>
+  </div>
+
+<% end %>
+
+
+
+
+

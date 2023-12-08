@@ -1,26 +1,59 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
 
-<div>Welcome <%= current_user.first_name.capitalize%>!</div>
 
-<div>
-    <div>
-        <%= current_user.goal.daily_calorie_goal %> 
-    </div>
 
+<br>
+<div class ="SumCardMain">
+<h1 class="dailySumTitle">Daily Summary</h1>
+
+<div class="DailySummaryCard">
+<div class = "weightInIcon">⚖</div>
+  <p class="GreetUserMessage">
+    Welcome <%= current_user.first_name.capitalize %>!
+  </p>
+
+  <table class="summaryTable">
+      <tr>
+        <td>Set Goal</td>
+        <td><%= current_user.goal.daily_calorie_goal %> cal</td>
+      </tr>
+      <tr>
+        <td>Remaining Calories</td>
+        <td><%= @remainingCal %> cal</td>
+      </tr>
+    </table>
+<h1>Calculations</h1>
+  <table class="caloriesTable">
+  <thead>
+    <tr>
+      <th>FOOD</th>
+      <th></th>
+      <th>EXERCISE</th>
+      <th></th>
+      <th>NET</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @meals_calories %></td>
+      <td>-</td>
+      <td><%= @workouts_calories %></td>
+      <td>=</td>
+      <td><%= @net_calories %></td>
+    </tr>
+  </tbody>
+</table>
+
+ 
 </div>
-
-<div>
-
-<%= @meals_calories%> + <%= @workouts_calories %> = Net Calories: <%= @net_calories %>
+<div class="btnCard">
+<%= button_to 'Add Workouts', new_workout_path, method: :get, class: "workoutbtn" %>
+<%= button_to 'Add Meals', new_meal_path, method: :get, class: "mealbtn" %>
+</div></div>
 </div>
-
-<div>
-  <%= button_to "Workouts", workouts_path, method: :get, class: 'btn btn-primary' %>
-</div>
-
-<div>
-  <%= button_to "Meals", meals_path, method: :get, class: 'btn btn-primary' %>
-</div>
-
-    

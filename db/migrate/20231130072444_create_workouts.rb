@@ -3,11 +3,10 @@ class CreateWorkouts < ActiveRecord::Migration[7.1]
     create_table :workouts do |t|
       t.date :log_date
       t.text :name
-      t.integer :met
+      t.float :met
+      t.text :user_input
       t.integer :duration_min
-      t.integer :nf_calories
-      t.text :exercise_type
-      t.text :photo_thumb_url
+      t.float :nf_calories
       t.integer :user_id
 
       t.timestamps

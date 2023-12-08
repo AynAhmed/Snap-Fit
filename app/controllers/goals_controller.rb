@@ -3,16 +3,17 @@ class GoalsController < ApplicationController
 
    # GET /goals or /goals.json
    def index
-    @goal = Goal.new
+    @goals = Goal.all
   end
 
   # GET /goals/1 or /goals/1.json
   def show
+    
   end
 
   # GET /goals/new
   def new
-    @goal = Goal.new
+    @goals = Goal.new
   end
 
   # GET /goals/1/edit
@@ -25,15 +26,15 @@ class GoalsController < ApplicationController
 # app/controllers/goals_controller.rb
 
 def create
-  @goal = current_user.goal || current_user.build_goal
+  @goals = current_user.goal || current_user.build_goal
   
-  @goal.attributes = goal_params
+  @goals.attributes = goal_params
 
   respond_to do |format|
     if @goal.save
       format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
       format.json { render :show, status: :created, location: @goal }
-      redirect_to dashboard_index_path
+      # redirect_to dashboard_index_path
     else
       format.html { render :new, status: :unprocessable_entity }
       format.json { render json: @goal.errors, status: :unprocessable_entity }

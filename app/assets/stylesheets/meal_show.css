@@ -1,0 +1,96 @@
+/* Meal Show page Styling */
+/* meal_show.css */
+
+.showPageImg img {
+    max-width: 100%;
+    height: auto;
+    border: solid black 2px;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .innercontainer {
+    background-color: #dcd59e;
+    width: 65%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: solid black 2px;
+    padding: 10px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .showPageImg {
+    margin-right: 20px;
+  }
+  
+  .table-photo-img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details {
+    max-width: 100%; /* Ensure details don't exceed container width */
+    width: 100%; /* Make details take full width on smaller screens */
+    padding: 15px;
+    margin-left: 0; /* Remove left margin for stacking */
+    
+    background-color: #f0c19b;
+    border: solid black 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .details p {
+    margin: 10px 0;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  .actions {
+    text-align: center;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+ a {
+    color: #007bff;
+    text-decoration: none;
+
+  }
+  
+  a:hover {
+    text-decoration: underline;
+   
+  } 
+
+  /* Responsive Adjustments */
+  @media screen and (max-width: 600px) {
+    .container {
+      flex-direction: column; /* Stack the elements vertically */
+      align-items: center; /* Center items in the column */
+    }
+  
+    .showPageImg {
+      margin-right: 0; /* Remove margin for stacking */
+      margin-bottom: 20px; /* Add margin for spacing */
+    }
+  }
+  

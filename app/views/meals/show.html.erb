@@ -1,10 +1,40 @@
-<p style="color: green"><%= notice %></p>
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
 
-<%= render @meal %>
-
-<div>
-  <%= link_to "Edit this meal", edit_meal_path(@meal) %> |
-  <%= link_to "Back to meals", meals_path %>
-
-  <%= button_to "Destroy this meal", @meal, method: :delete %>
+<!-- app/views/meals/show.html.erb -->
+<h1><%= @meal.food_name.capitalize %></h1>
+<div class="innercontainer">
+<div class="container">
+<div class="showPageImg">
+  <img src="<%= @meal.photo_highres_url %>" alt="Meal Image" class="table-photo-img">
 </div>
+
+<div class="details">
+  <p><strong>Entry Date:</strong> <%= @meal.log_date %></p>
+  <p><strong>Qty:</strong> <%= @meal.serving_qty %> <%= @meal.serving_unit %></p>
+  
+  <p><strong>Nutritional Information:</strong></p>
+  <ul>
+    <li><strong>Calories:</strong> <%= @meal.nf_calories %></li>
+    <li><strong>Saturated Fat:</strong> <%= @meal.nf_saturated_fat%></li>
+    <li><strong>Cholesterol:</strong> <%= @meal.nf_cholesterol %></li>
+    <li><strong>Sodium:</strong> <%= @meal.nf_sodium %></li>
+    <li><strong>Total Carbohydrate:</strong> <%= @meal.nf_total_carbohydrate %></li>
+    <li><strong>Sugars:</strong> <%= @meal.nf_sugars %></li>
+    <li><strong>Protein:</strong> <%= @meal.nf_protein %></li>
+    <li><strong>Potassium:</strong> <%= @meal.nf_potassium%></li>
+  </ul>
+</div>
+</div>
+</div>
+  <div class="actions">
+    <%= link_to 'Edit', edit_meal_path(@meal) %> |
+    <%= link_to 'Back', meals_path %>
+  </div>
+
+  
