@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WelcomeController < ApplicationController
   before_action :redirect_to_goal, if: -> { user_signed_in? }
 
@@ -15,7 +17,7 @@ class WelcomeController < ApplicationController
        user_goal.daily_calorie_goal.present?
       redirect_to dashboard_index_path
     else
-      redirect_to new_goal_path, alert: "Please fill in your goal details before proceeding."
+      redirect_to new_goal_path, alert: 'Please fill in your goal details before proceeding.'
     end
   end
 end

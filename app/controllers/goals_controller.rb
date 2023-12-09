@@ -1,54 +1,46 @@
-class GoalsController < ApplicationController
-  before_action :set_goal, only: %i[show edit update destroy]
+# frozen_string_literal: true
 
-   # GET /goals or /goals.json
-   def index
+class GoalsController < ApplicationController
+  before_action :set_goal, only: %i[show edit]
+
+  # GET /goals or /goals.json
+  def index
     @goals = Goal.all
   end
 
   # GET /goals/1 or /goals/1.json
-  def show
-    
-  end
+  def show; end
 
   # GET /goals/new
   def new
-    @goals = Goal.new
+    @goal = Goal.new
   end
 
   # GET /goals/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /goals or /goals.json
-  # app/controllers/goals_controller.rb
-
-# app/controllers/goals_controller.rb
-
-def create
-  @goals = current_user.goal || current_user.build_goal
+  def create
+    @goal = current_user.build_goal(goal_params)
+    puts "Received params: #{params.inspect}"
   
-  @goals.attributes = goal_params
-
-  respond_to do |format|
-    if @goal.save
-      format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
-      format.json { render :show, status: :created, location: @goal }
-      # redirect_to dashboard_index_path
-    else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @goal.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @goal.save
+        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+      else
+        puts "Errors: #{@goal.errors.full_messages.inspect}"
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
-end
 
-
+  
 
   # PATCH/PUT /goals/1 or /goals/1.json
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to goal_url(@goal), notice: "Goal was successfully updated." }
+        format.html { redirect_to goal_url(@goal), notice: 'Goal was successfully updated.' }
         format.json { render :show, status: :ok, location: @goal }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -62,7 +54,7 @@ end
     @goal.destroy!
 
     respond_to do |format|
-      format.html { redirect_to goals_url, notice: "Goal was successfully destroyed." }
+      format.html { redirect_to goals_url, notice: 'Goal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,7 +64,7 @@ end
   def goal_params
     params.require(:goal).permit(:goal_type, :target_value, :current_value, :daily_calorie_goal)
   end
-
+  
   # Use callbacks to share common setup or constraints between actions.
   def set_goal
     @goal = Goal.find(params[:id])

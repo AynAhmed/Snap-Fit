@@ -9,11 +9,12 @@
 
 
 <br>
+<div class ="WholeCard">
 <div class ="SumCardMain">
 <h1 class="dailySumTitle">Daily Summary</h1>
 
 <div class="DailySummaryCard">
-<div class = "weightInIcon">⚖</div>
+<div link_to class = "weightInIcon">⚖</div>
   <p class="GreetUserMessage">
     Welcome <%= current_user.first_name.capitalize %>!
   </p>
@@ -56,4 +57,5 @@
 <%= button_to 'Add Workouts', new_workout_path, method: :get, class: "workoutbtn" %>
 <%= button_to 'Add Meals', new_meal_path, method: :get, class: "mealbtn" %>
 </div></div>
+</div>
 </div>

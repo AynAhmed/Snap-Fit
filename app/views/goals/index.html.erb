@@ -14,13 +14,13 @@
 
 <% @goals.each do |goal| %>
     <p><strong>Goal Type</strong></p>
-    <%= goal.goal_type %>
+    <%= current_user.goal.goal_type %>
     <p><strong>Weight Goal</strong></p>
-    <%= goal.target_value %>
+    <%= current_user.goal.target_value %>
     <p><strong>Weight Currently</strong></p>
-    <%= goal.current_value %>
+    <%= current_user.goal.current_value %>
     <p><strong>Your Daily Calorie Goal</strong></p>
-    <%= goal.daily_calorie_goal %>
+    <%= current_user.goal.daily_calorie_goal %>
 <% end %>
 
 

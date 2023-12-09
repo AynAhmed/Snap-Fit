@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DashboardController < ApplicationController
   def index
     calculate_net
@@ -13,18 +15,17 @@ class DashboardController < ApplicationController
       @meals_calories = 0
       @workouts_calories = 0
     end
-  
-    if @meals_calories.zero? && @workouts_calories.zero?
-      @net_calories = 0
-    else
-      @net_calories = @meals_calories - @workouts_calories
-    end
-  
-   if @net_calories > 0 
-    @remainingCal = current_user.goal.daily_calorie_goal - @net_calories
-   else 
-    @remainingCal = current_user.goal.daily_calorie_goal + @net_calories
-   end 
-  end
 
+    @net_calories = if @meals_calories.zero? && @workouts_calories.zero?
+                      0
+                    else
+                      @meals_calories - @workouts_calories
+                    end
+
+    @remainingCal = if @net_calories.positive?
+                      current_user.goal.daily_calorie_goal - @net_calories
+                    else
+                      current_user.goal.daily_calorie_goal + @net_calories
+                    end
+  end
 end
