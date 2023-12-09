@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: [:show, :edit,]
+  before_action :set_workout, only: %i[show edit]
 
   def index
     @workouts = Workout.all
@@ -24,7 +26,7 @@ class WorkoutsController < ApplicationController
         duration_min: data['duration_min'],
         met: data['met'],
         user_input: data['user_input'],
-        nf_calories: data['nf_calories'],
+        nf_calories: data['nf_calories']
         # Add other attributes as needed
       )
 
@@ -35,7 +37,7 @@ class WorkoutsController < ApplicationController
       end
     end
 
-    puts "All workouts saved successfully!"
+    puts 'All workouts saved successfully!'
     redirect_to workouts_path, notice: 'Workouts logged successfully.'
   end
 

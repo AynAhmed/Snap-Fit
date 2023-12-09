@@ -1,21 +1,31 @@
 /* Dashboard Styling */
 /* Dashboard.css */
-/* Dashboard Styling */
-/* Dashboard.css */
-/* Dashboard Styling */
-/* Dashboard.css */
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nanum+Brush+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nanum+Brush+Script&family=Orbitron&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
 .DailySummaryCard {
     border: 2px solid black;
-    padding: 30px;
-    margin: 20px auto;
+    padding: 20px 30px 20px 30px;
+    margin: auto;
     border-radius: 10px;
     max-width: 800px;
     background-color: #F8E6A6;
   }
-  
+body{
+    position: relative;
+
+
+}
+ 
+.WholeCard{
+
+    position: absolute;
+ 
+    left: 0;
+    right: 0;
+
+}
+
   .DailySummaryCard .GreetUserMessage {
     font-size: 20px;
     margin-bottom: 5px;
@@ -53,7 +63,8 @@
     font-family: 'Nanum Brush Script', cursive;
     font-size: 22px;
     cursor: pointer;
-    padding: 10px 171px;
+    padding: 8px 171px;
+
   }
 
     .btnCard  .workoutbtn:hover, .btnCard  .mealbtn:hover {
@@ -69,9 +80,9 @@
   }
 
   .caloriesTable {
-    font-size: 33px;
+    font-size: 30px;
     width: 100%;
-    margin: 20px auto;
+    margin: auto;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
@@ -95,7 +106,7 @@
   .summaryTable {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+ 
   }
 
   .summaryTable td {
@@ -122,6 +133,8 @@
    margin-right: 37px;
    margin-bottom: 30px;
   }
-  .GreetUserMessage p {
+  .DailySummaryCard .GreetUserMessage  {
     margin-bottom: 30px;
+    font-size: 25px;
+
   }

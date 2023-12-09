@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # app/controllers/meals_controller.rb
 class MealsController < ApplicationController
-  before_action :set_meal, only: %i[ edit update destroy]
+  before_action :set_meal, only: %i[edit update destroy]
 
   # GET /meals or /meals.json
   def index
@@ -18,15 +20,13 @@ class MealsController < ApplicationController
   end
 
   # GET /meals/1/edit
-  def edit
-
-  end
+  def edit; end
 
   # POST /meals or /meals.json
   def create
     response = make_api_request(params[:meal][:user_input])
     meal_data = extract_data_from_api_response(response)
-  
+
     meal_data.each do |data|
       puts '................................'
       puts data['serving_unit']
@@ -35,8 +35,8 @@ class MealsController < ApplicationController
         food_name: data['food_name'],
         serving_unit: data['serving_unit'],
         nf_calories: data['nf_calories'],
-        serving_qty: data["serving_qty"],
-        nf_saturated_fat: data["nf_saturated_fat"],
+        serving_qty: data['serving_qty'],
+        nf_saturated_fat: data['nf_saturated_fat'],
         nf_total_fat: data['nf_total_fat'],
         nf_cholesterol: data['nf_cholesterol'],
         nf_sodium: data['nf_sodium'],
@@ -51,25 +51,23 @@ class MealsController < ApplicationController
         meal_type: params[:meal][:meal_type]
         # Add other attributes as needed
       )
-  
+
       # Save each meal inside the loop
       unless @meal.save
         puts "Error saving meal: #{meal.errors.full_messages.join(', ')}"
         render :new and return
       end
     end
-  
-    puts "All meals saved successfully!"
+
+    puts 'All meals saved successfully!'
     redirect_to meals_path, notice: 'Meals logged successfully.'
   end
-
-
 
   # PATCH/PUT /meals/1 or /meals/1.json
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to meal_url(@meal), notice: "Meal was successfully updated." }
+        format.html { redirect_to meal_url(@meal), notice: 'Meal was successfully updated.' }
         format.json { render :show, status: :ok, location: @meal }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -117,30 +115,26 @@ class MealsController < ApplicationController
     response['foods']
   end
 
-
-
-
   # Only allow a list of trusted parameters through.
   def meal_params
-    params.require(:meal).permit(  
-    :food_name,
-    :serving_qty,
-    :serving_unit,
-    :nf_calories,
-    :nf_saturated_fat,
-    :nf_total_fat,
-    :nf_cholesterol,
-    :nf_sodium,
-    :nf_total_carbohydrate,
-    :nf_sugars,
-    :nf_protein,
-    :nf_potassium,
-    :photo_thumb_url,
-    :photo_highres_url,
-    :user_input,
-    :log_date,
-    :meal_type
+    params.require(:meal).permit(
+      :food_name,
+      :serving_qty,
+      :serving_unit,
+      :nf_calories,
+      :nf_saturated_fat,
+      :nf_total_fat,
+      :nf_cholesterol,
+      :nf_sodium,
+      :nf_total_carbohydrate,
+      :nf_sugars,
+      :nf_protein,
+      :nf_potassium,
+      :photo_thumb_url,
+      :photo_highres_url,
+      :user_input,
+      :log_date,
+      :meal_type
     )
   end
-
 end

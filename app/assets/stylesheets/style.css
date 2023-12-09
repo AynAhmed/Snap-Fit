@@ -3,6 +3,12 @@
 /* font - brush style */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 
+/* get rid of scroll on page */
+/* html, body {
+  overflow: hidden;
+} */
+
+
 body{
     background-color:#f0e7db;
     font-family: 'Nanum Brush Script', cursive;
