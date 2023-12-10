@@ -1,4 +1,12 @@
-<h1>My Meals</h1>
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
+
+<h1>Meal Entries</h1>
 
 <table class="mealTable">
   <thead>
@@ -25,11 +33,11 @@
       <tr>
         <td class="table-photo-cell" style="background-image: url('<%= meal.photo_thumb_url %>');"></td>
         <td><%= link_to meal.food_name.capitalize, meal %></td>
-        <td><%= meal.nf_calories %></td>
+        <td><%= meal.nf_calories %> cal</td>
         <td><%= meal.serving_qty %></td>
         <td><%= meal.serving_unit %></td>
 
-        <td><%= link_to '✐', edit_meal_path(meal), class: 'edit-pen' %></td>
+       
         <td><%= link_to "✘", meal_path(meal), data: {
           turbo_method: :delete,
           turbo_confirm: "Are you sure?"

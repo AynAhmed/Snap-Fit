@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: %i[show edit]
+  before_action :set_workout, only: %i[ show destroy]
 
   def index
-    @workouts = Workout.all
+    @workouts = current_user.workouts.all
   end
 
   def show
-    @workout = Workout.find(params[:id])
+   
   end
 
   def new
@@ -41,8 +41,14 @@ class WorkoutsController < ApplicationController
     redirect_to workouts_path, notice: 'Workouts logged successfully.'
   end
 
-  def edit
-    @workout = Workout.find(params[:id])
+  
+
+  def destroy
+    @workout.destroy
+    respond_to do |format|
+      # format.html { redirect_to meals_url, notice: "Meal was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private

@@ -7,13 +7,13 @@
 </ul>
 
 <!-- app/views/workouts/index.html.erb -->
-<h1>Workouts Entries</h1>
+<h1>Workout Entries</h1>
 <table class="mealTable">
 <thead>
   <tr>
     <th>Name</th>
     <th>Duration (min)</th>
-    <th>Calories</th>
+    <th>Calories Burned</th>
     <th>MET</th>
     <th colspan="2"></th> <!-- Merge the columns for Edit and Destroy -->
   </tr>
@@ -30,12 +30,12 @@
     <% end %>
 
     <tr>
-      <td><strong><%= workout.name %></strong></td>
+      <td><strong><%= workout.name.capitalize %></strong></td>
       <td><%= workout.duration_min %></td>
       <td><%= workout.nf_calories %></td>
       <td><%= workout.met %></td>
 
-      <td><%= link_to '✐', edit_workout_path(workout), class: 'edit-pen' %></td>
+     
       <td><%= link_to "✘", workout_path(workout), data: {
         turbo_method: :delete,
         turbo_confirm: "Are you sure?"
@@ -44,6 +44,6 @@
   <% end %>
 </tbody>
 </table>
-<%= link_to 'New Workout', new_meal_path, class: "newMealBtn" %>
+<%= link_to 'New Workout', new_workout_path, class: "newMealBtn" %>
 
 

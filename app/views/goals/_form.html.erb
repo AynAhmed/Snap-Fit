@@ -1,6 +1,6 @@
 <!-- app/views/goals/_form.html.erb -->
 
-<%= form_with(model: @goal, url: goals_path) do |form| %>
+<%= form_for(model: @goal, url: goals_path) do |form| %>
   <div class="field">
     <%= form.label :goal_type %>
     <%= form.select :goal_type, ['Lose weight', 'Gain weight', 'Maintain weight', 'Gain muscle'] %>
@@ -20,6 +20,7 @@
     <%= form.label :daily_calorie_goal %>
     <%= form.number_field :daily_calorie_goal %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>

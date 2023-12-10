@@ -1,12 +1,6 @@
-<ul class = "navbar">
-  <li><%= link_to 'Home', dashboard_index_path %></li>
-  <li><%= link_to 'Meals', meals_path %></li>
-  <li><%= link_to 'Workouts', workouts_path %></li>
-  <li><%= link_to 'Goals', goals_path %></li>
-  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
-</ul>
+
 <!-- app/views/workouts/_form.html.erb -->
-<h1>Add A New Workout</h1>
+
 <%= form_with(model: @workout, url: workouts_path, method: :post) do |form| %>
     <div class="field">
     <%= form.label :For %>
@@ -21,5 +15,5 @@
   </div>
 
 
-  <%= form.submit "Log Workout" %>
+  <%= form.submit %>
 <% end %>

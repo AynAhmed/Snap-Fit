@@ -43,7 +43,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .details {
     max-width: 100%; /* Ensure details don't exceed container width */
     width: 100%; /* Make details take full width on smaller screens */
