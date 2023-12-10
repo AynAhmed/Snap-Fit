@@ -9,7 +9,6 @@
     margin-top: 20px;
   }
 
- 
   table.mealTable {
     font-size: 22px;
     width: 80%;
@@ -36,7 +35,7 @@
   table.mealTable tbody{
     background-color: white;
   }
-  table.mealTable tbody tr:hover {
+  table.mealTable tbody tr:not(.table-row-Date):hover {
     background-color: #f4e3c0;
   }
 
@@ -77,6 +76,16 @@
     transition: background-color 0.5s ease;
   }
 
+  .table-row-Date{
+    background-color:#DADCEF ;
+   
+  }
+  
+  .table-row-Date td {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 25px;
+  }
 
   .table-photo-cell {
     width: 30px;

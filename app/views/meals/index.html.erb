@@ -1,15 +1,6 @@
-<ul class = "navbar">
-  <li><%= link_to 'Home', dashboard_index_path %></li>
-  <li><%= link_to 'Meals', meals_path %></li>
-  <li><%= link_to 'Workouts', workouts_path %></li>
-  <li><%= link_to 'Goals', goals_path %></li>
-  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
-</ul>
-
-<!-- app/views/meals/index.html.erb -->
 <h1>My Meals</h1>
 
-<table class = "mealTable ">
+<table class="mealTable">
   <thead>
     <tr>
       <th></th>
@@ -22,21 +13,28 @@
   </thead>
 
   <tbody>
+    <% current_date = nil %>
     <% @meals.each do |meal| %>
+      <% if current_date != meal.log_date %>
+        <tr class="table-row-Date">
+          <td colspan="7"><%= meal.log_date %></td>
+        </tr>
+        <% current_date = meal.log_date %>
+      <% end %>
+
       <tr>
         <td class="table-photo-cell" style="background-image: url('<%= meal.photo_thumb_url %>');"></td>
         <td><%= link_to meal.food_name.capitalize, meal %></td>
         <td><%= meal.nf_calories %></td>
-        <td><%= meal.serving_qty %></td> 
-        <td><%= meal.serving_unit %></td> 
+        <td><%= meal.serving_qty %></td>
+        <td><%= meal.serving_unit %></td>
 
-        <td><%= link_to '✐', edit_meal_path(meal),  class: 'edit-pen'%></td>
+        <td><%= link_to '✐', edit_meal_path(meal), class: 'edit-pen' %></td>
         <td><%= link_to "✘", meal_path(meal), data: {
           turbo_method: :delete,
           turbo_confirm: "Are you sure?"
-          } %></td>
-
-        </tr>
+        } %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

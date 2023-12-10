@@ -8,25 +8,42 @@
 
 <!-- app/views/workouts/index.html.erb -->
 <h1>Workouts Entries</h1>
-  <div>
-  
-  <%= button_to "Add workouts", new_workout_path, method: :get %>
-  
-  </div>
+<table class="mealTable">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Duration (min)</th>
+    <th>Calories</th>
+    <th>MET</th>
+    <th colspan="2"></th> <!-- Merge the columns for Edit and Destroy -->
+  </tr>
+</thead>
 
-<% @workouts.each do |workout| %>
-  <div>
-    <strong><%= workout.log_date %></strong>
-    <strong><%= workout.name %></strong>
-    <p>Duration: <%= workout.duration_min %> minutes</p>
-    <p>Calories burned: <%= workout.nf_calories %></p>
-    <p>MET: <%= workout.met %></p>
-    <p>Calories burned: <%= workout.nf_calories %></p>
-  </div>
+<tbody>
+  <% current_date = nil %>
+  <% @workouts.each do |workout| %>
+    <% if current_date != workout.log_date %>
+      <tr class="table-row-Date">
+        <td colspan="7"><%= workout.log_date %></td>
+      </tr>
+      <% current_date = workout.log_date %>
+    <% end %>
 
-<% end %>
+    <tr>
+      <td><strong><%= workout.name %></strong></td>
+      <td><%= workout.duration_min %></td>
+      <td><%= workout.nf_calories %></td>
+      <td><%= workout.met %></td>
 
-
-
+      <td><%= link_to '✐', edit_workout_path(workout), class: 'edit-pen' %></td>
+      <td><%= link_to "✘", workout_path(workout), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<%= link_to 'New Workout', new_meal_path, class: "newMealBtn" %>
 
 

@@ -26,7 +26,7 @@ class GoalsController < ApplicationController
   
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to dashboard_index_path, notice: 'Goal was successfully created.' }
       else
         puts "Errors: #{@goal.errors.full_messages.inspect}"
         format.html { render :new, status: :unprocessable_entity }
