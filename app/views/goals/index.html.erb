@@ -12,6 +12,7 @@
 <h1 class="goalTitle">Goal Details</h1>
 
 <div class="goalsContainer">
+
   <table class="goalsTable">
     <tr>
       <th>Goal Type</th>
@@ -30,6 +31,11 @@
       <td><%= @goals.daily_calorie_goal %></td>
     </tr>
   </table>
+
+  <% weight_logs_by_day = @weight_logs.group_by { |log| log.log_date.to_date } %>
+
+<%= line_chart weight_logs_by_day.transform_values { |logs| logs.sum(&:weight) / logs.length }, height: "400px" %>
+
 </div>
 
 

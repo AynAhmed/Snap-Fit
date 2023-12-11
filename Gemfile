@@ -16,6 +16,9 @@ gem 'pg', '~> 1.4'
 # Add  rest-client to handel http request
 gem 'rest-client', '~> 2.1'
 
+# This sets up Chartkick with Chart.js. 
+gem "chartkick"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
