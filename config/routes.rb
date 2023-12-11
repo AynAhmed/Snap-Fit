@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :goals
   resources :weight_logs, only: [:new, :create]
+  get '/goals/weight_logs_data', to: 'goals#weight_logs_data'
+  
   # Defines the root path route ("/")
   # root "posts#index"
 end

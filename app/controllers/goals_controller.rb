@@ -6,10 +6,16 @@ class GoalsController < ApplicationController
   # GET /goals or /goals.json
   def index
     @goals = current_user.goal
+    #we convert the relation to an array, which should then allow you to use the group_by_day method in the view.
+    @weight_logs = current_user.weight_logs.order(:log_date).to_a
+
   end
 
   # GET /goals/1 or /goals/1.json
-  def show; end
+  def show
+    @goal = Goal.find(params[:id])
+    @weight_logs = current_user.weight_logs.order(:log_date)
+  end
 
   # GET /goals/new
   def new
@@ -34,7 +40,11 @@ class GoalsController < ApplicationController
     end
   end
 
+  def weight_logs_data
+    weight_logs = WeightLog.where(user_id: current_user.id).order(log_date: :asc)
 
+    render json: weight_logs.map { |log| { log_date: log.log_date, weight: log.weight } }
+  end
 
   # PATCH/PUT /goals/1 or /goals/1.json
   def update
@@ -48,6 +58,8 @@ class GoalsController < ApplicationController
       end
     end
   end
+
+
 
   # DELETE /goals/1 or /goals/1.json
   def destroy
