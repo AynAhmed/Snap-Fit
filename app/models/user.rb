@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_one :goal, dependent: :destroy
+  has_many :weight_logs, dependent: :destroy
   has_many :meals, dependent: :destroy
   has_many :workouts, dependent: :destroy
   # Include default devise modules. Others available are:

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,71 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_231_130_075_544) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_004729) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'goals', force: :cascade do |t|
-    t.text 'goal_type'
-    t.integer 'target_value'
-    t.integer 'current_value'
-    t.integer 'daily_calorie_goal'
-    t.bigint 'user_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_goals_on_user_id'
+  create_table "goals", force: :cascade do |t|
+    t.text "goal_type"
+    t.integer "target_value"
+    t.integer "current_value"
+    t.integer "daily_calorie_goal"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
-  create_table 'meals', force: :cascade do |t|
-    t.text 'food_name'
-    t.integer 'serving_qty'
-    t.text 'serving_unit'
-    t.decimal 'nf_calories'
-    t.decimal 'nf_saturated_fat'
-    t.decimal 'nf_total_fat'
-    t.decimal 'nf_cholesterol'
-    t.decimal 'nf_sodium'
-    t.decimal 'nf_total_carbohydrate'
-    t.decimal 'nf_sugars'
-    t.decimal 'nf_protein'
-    t.decimal 'nf_potassium'
-    t.text 'photo_thumb_url'
-    t.text 'photo_highres_url'
-    t.date 'log_date'
-    t.text 'meal_type'
-    t.text 'user_input'
-    t.bigint 'user_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_meals_on_user_id'
+  create_table "meals", force: :cascade do |t|
+    t.text "food_name"
+    t.integer "serving_qty"
+    t.text "serving_unit"
+    t.decimal "nf_calories"
+    t.decimal "nf_saturated_fat"
+    t.decimal "nf_total_fat"
+    t.decimal "nf_cholesterol"
+    t.decimal "nf_sodium"
+    t.decimal "nf_total_carbohydrate"
+    t.decimal "nf_sugars"
+    t.decimal "nf_protein"
+    t.decimal "nf_potassium"
+    t.text "photo_thumb_url"
+    t.text "photo_highres_url"
+    t.date "log_date"
+    t.text "meal_type"
+    t.text "user_input"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'first_name', null: false
-    t.string 'last_name', null: false
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table 'workouts', force: :cascade do |t|
-    t.date 'log_date'
-    t.text 'name'
-    t.float 'met'
-    t.text 'user_input'
-    t.integer 'duration_min'
-    t.float 'nf_calories'
-    t.integer 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "weight_logs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.decimal "weight"
+    t.date "log_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_weight_logs_on_user_id"
   end
 
-  add_foreign_key 'goals', 'users'
-  add_foreign_key 'meals', 'users'
+  create_table "workouts", force: :cascade do |t|
+    t.date "log_date"
+    t.text "name"
+    t.float "met"
+    t.text "user_input"
+    t.integer "duration_min"
+    t.float "nf_calories"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "goals", "users"
+  add_foreign_key "meals", "users"
+  add_foreign_key "weight_logs", "users"
 end
