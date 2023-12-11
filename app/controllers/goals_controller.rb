@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
 
   # GET /goals or /goals.json
   def index
-    @goals = Goal.all
+    @goals = current_user.goal
   end
 
   # GET /goals/1 or /goals/1.json
@@ -60,6 +60,8 @@ class GoalsController < ApplicationController
   end
 
   private
+
+
 
   def goal_params
     params.require(:goal).permit(:goal_type, :target_value, :current_value, :daily_calorie_goal)

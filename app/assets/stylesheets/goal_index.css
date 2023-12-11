@@ -1,0 +1,41 @@
+/* goal/index Page Styling */
+/* goal_index.css */
+
+.goalsContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+   
+  }
+
+  .goalsTable {
+    border-collapse: collapse;
+    width: 400px;
+    text-align: left;
+  }
+  table.goalsTable{
+     background-color: black;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Add border-radius */
+    border: solid black 2px;
+    overflow: hidden; /* Ensure border-radius is applied to the overflow content */
+
+}
+  
+  .goalsTable th,
+  .goalsTable td {
+    padding: 10px;
+    background-color: white;
+    padding: 15px 10px ;
+    border-bottom: 1px solid #ddd;
+  }
+  .goalsTable th{
+    color: #007bff;
+  }
+ 
+
+
+  .goalTitle {
+    text-align: center;
+  }

@@ -9,19 +9,27 @@
 <p style="color: green"><%= notice %></p>
 
 <!-- app/views/goals/index.html.erb -->
-<h1 class="dailySumTitle">Goal Details</h1>
+<h1 class="goalTitle">Goal Details</h1>
+
+<div class="goalsContainer">
+  <table class="goalsTable">
+    <tr>
+      <th>Goal Type</th>
+      <td><%= @goals.goal_type %></td>
+    </tr>
+    <tr>
+      <th>Weight Goal</th>
+      <td><%= @goals.target_value %></td>
+    </tr>
+    <tr>
+      <th>Starting Weight</th>
+      <td><%= @goals.current_value %></td>
+    </tr>
+    <tr>
+      <th>Your Daily Calorie Goal</th>
+      <td><%= @goals.daily_calorie_goal %></td>
+    </tr>
+  </table>
+</div>
 
 
-<% @goals.each do |goal| %>
-    <p><strong>Goal Type</strong></p>
-    <%= current_user.goal.goal_type %>
-    <p><strong>Weight Goal</strong></p>
-    <%= current_user.goal.target_value %>
-    <p><strong>Weight Currently</strong></p>
-    <%= current_user.goal.current_value %>
-    <p><strong>Your Daily Calorie Goal</strong></p>
-    <%= current_user.goal.daily_calorie_goal %>
-<% end %>
-
-
-<h2>Motivation Oasis</h2>
