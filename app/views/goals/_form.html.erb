@@ -1,6 +1,8 @@
 <!-- app/views/goals/_form.html.erb -->
 
-<%= form_for(model: @goal, url: goals_path) do |form| %>
+<!-- app/views/goals/_form.html.erb -->
+
+<%= form_for(@goal) do |form| %>
   <div class="field">
     <%= form.label :goal_type %>
     <%= form.select :goal_type, ['Lose weight', 'Gain weight', 'Maintain weight', 'Gain muscle'] %>

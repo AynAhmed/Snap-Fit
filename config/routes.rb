@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'weight_logs/create'
+  get 'new/create'
   get 'dashboard/index'
   devise_for :users
   get 'welcome/index'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   resources :workouts
 
   resources :goals
-
+  resources :weight_logs, only: [:new, :create]
   # Defines the root path route ("/")
   # root "posts#index"
 end

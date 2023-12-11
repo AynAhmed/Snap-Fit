@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
     end
   end
 
-  
+
 
   # PATCH/PUT /goals/1 or /goals/1.json
   def update

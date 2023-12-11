@@ -14,7 +14,7 @@
 <h1 class="dailySumTitle">Daily Summary</h1>
 
 <div class="DailySummaryCard">
-<div link_to class = "weightInIcon">⚖</div>
+<%= link_to new_weight_log_path, class: "weightInIcon" do %>⚖<% end %>
   <p class="GreetUserMessage">
     Welcome <%= current_user.first_name.capitalize %>!
   </p>

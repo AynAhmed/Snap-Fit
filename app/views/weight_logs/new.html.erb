@@ -1,0 +1,25 @@
+<ul class = "navbar">
+  <li><%= link_to 'Home', dashboard_index_path %></li>
+  <li><%= link_to 'Meals', meals_path %></li>
+  <li><%= link_to 'Workouts', workouts_path %></li>
+  <li><%= link_to 'Goals', goals_path %></li>
+  <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
+</ul>
+
+<!-- app/views/weight_logs/new.html.erb -->
+<h1>Log Your Weight</h1>
+
+<%= form_with(model: @weight_log, url: weight_logs_path, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :log_date %>
+    <%= form.date_field :log_date, required: true %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight, step: 0.1, required: true %>
+  </div>
+
+  
+  <%= form.submit 'Log Weight' %>
+<% end %>
