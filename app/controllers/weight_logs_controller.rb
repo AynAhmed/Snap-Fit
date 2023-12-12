@@ -1,5 +1,6 @@
 # app/controllers/weight_logs_controller.rb
 class WeightLogsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @weight_log = current_user.weight_logs.new if current_user.present?
   end

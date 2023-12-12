@@ -2,6 +2,7 @@
 
 # app/controllers/meals_controller.rb
 class MealsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_meal, only: %i[edit update destroy]
 
   # GET /meals or /meals.json

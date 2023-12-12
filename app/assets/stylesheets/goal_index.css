@@ -1,11 +1,11 @@
 /* goal/index Page Styling */
 /* goal_index.css */
 
-.goalsContainer {
+.goalsSection {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
-   
+    justify-content:start;
+    margin-left: 20px;
   }
 
   .goalsTable {
@@ -17,7 +17,9 @@
      background-color: black;
 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; /* Add border-radius */
+    border-top-left-radius: 8px; /* Add border-radius */
+    border-bottom-left-radius: 8px; /* Add border-radius */
+
     border: solid black 2px;
     overflow: hidden; /* Ensure border-radius is applied to the overflow content */
 
@@ -35,7 +37,54 @@
   }
  
 
-
   .goalTitle {
     text-align: center;
   }
+  .chartContainer{
+    display: flex;
+    justify-content:center;
+  }
+  .Chart{
+    background-color: white ;
+    width: 75%;
+    padding: 7px;
+    border-radius: 8px;
+    border: solid black 2px;
+    margin-bottom:10px ;
+    text-align: left;
+
+  }
+
+  .goalsContainer {
+    display: flex;
+    justify-content: center;
+
+  }
+.goalInfo{
+  width: 400px;
+  height: 215px;
+  margin-top: 20px;
+  background-color: #DADCEF;
+  border-right: solid black 2px;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+  
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.goalInfo p {
+  color: #E9B01C; 
+  font-size: 22px;
+  margin-top: 4rem;
+  margin-left: 15px;
+}
+
+.goalInfo h6{
+  font-size: 27px;
+  background-color: #BCD2BE;
+  border-radius: 50px;
+  margin-top: 5rem;
+ margin-left: 20px;
+ margin-right: 20px;
+  text-align: center;
+}

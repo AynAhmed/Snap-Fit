@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
+
   before_action :redirect_to_goal, if: -> { user_signed_in? }
 
   def index

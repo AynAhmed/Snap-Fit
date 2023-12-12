@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WorkoutsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_workout, only: %i[ show destroy]
 
   def index

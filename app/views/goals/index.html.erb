@@ -10,32 +10,46 @@
 
 <!-- app/views/goals/index.html.erb -->
 <h1 class="goalTitle">Goal Details</h1>
+<div class = "goalsContainer">
 
-<div class="goalsContainer">
 
-  <table class="goalsTable">
-    <tr>
-      <th>Goal Type</th>
-      <td><%= @goals.goal_type %></td>
-    </tr>
-    <tr>
-      <th>Weight Goal</th>
-      <td><%= @goals.target_value %></td>
-    </tr>
-    <tr>
-      <th>Starting Weight</th>
-      <td><%= @goals.current_value %></td>
-    </tr>
-    <tr>
-      <th>Your Daily Calorie Goal</th>
-      <td><%= @goals.daily_calorie_goal %></td>
-    </tr>
-  </table>
+    <div class="goalsSection">
+    
+   
+      <table class="goalsTable">
+        <tr>
+          <th>Goal Type</th>
+          <td><%= @goals.goal_type %></td>
+        </tr>
+        <tr>
+          <th>Weight Goal</th>
+          <td><%= @goals.target_value %></td>
+        </tr>
+        <tr>
+          <th>Starting Weight</th>
+          <td><%= @goals.current_value %></td>
+        </tr>
+        <tr>
+          <th>Your Daily Calorie Goal</th>
+          <td><%= @goals.daily_calorie_goal %></td>
+        </tr>
+      </table>
+    </div>
 
-  <% weight_logs_by_day = @weight_logs.group_by { |log| log.log_date.to_date } %>
-
-<%= line_chart weight_logs_by_day.transform_values { |logs| logs.sum(&:weight) / logs.length }, height: "400px" %>
+  
+    <div class="goalInfo">
+    <h6><%=@lb_remaining %>LBS From Target Goal</h6>
+      <p>Started goal <%= @days_since_goal_updated %> days ago</p>
+     </div>
 
 </div>
 
+<h1>Weight Progess</h1>
+<div class = "chartContainer">
+  <div class= "Chart">
+    <% weight_logs_by_day = @weight_logs.group_by { |log| log.log_date.to_date } %>
 
+    <%= line_chart weight_logs_by_day.transform_values { |logs| logs.sum(&:weight) / logs.length }, height: "400px" %>
+  </div>
+
+  </div>
