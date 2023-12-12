@@ -1,11 +1,12 @@
 <!-- app/views/welcome/index.html.erb -->
-
-<div class= "welcomeContainer">
-  <div class = "welcomeImg">
+<body style="background-image: url('<%= asset_path('background2.png') %>'); background-size: cover; background-position: center; background-repeat: no-repeat; margin-top:51rem; position:relative;">
+  <div class="welcomeContainer">
+    <div class="Startbtn">
+    <h1>WELCOME! </h1>
+    <div class = "welcomeImg">
   <%= image_tag("logo.png", alt: "Fitness App Logo") %>
   </div>
-
-  <div class = "Startbtn">
       <%= link_to 'Get Started', new_user_registration_path, class: 'GetStartedBtn' %>
+    </div>
   </div>
-</div>
+</body>

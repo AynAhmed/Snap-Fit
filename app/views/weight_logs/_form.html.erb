@@ -1,0 +1,17 @@
+<!-- app/views/weight_logs/new.html.erb -->
+
+<%= form_with(model: @weight_log, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :log_date %>
+      <%= form.date_field :log_date, required: true %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :weight %>
+      <%= form.number_field :weight, step: 0.1, required: true %>
+    </div>
+  
+    <%= form.submit 'Log Weight' %>
+  <% end %>
+  
+  <%= link_to "Previously logged", weight_logs_path %>

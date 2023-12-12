@@ -61,14 +61,14 @@ class MealsController < ApplicationController
     end
 
     puts 'All meals saved successfully!'
-    redirect_to meals_path, notice: 'Meals logged successfully.'
+    redirect_to meals_path
   end
 
   # PATCH/PUT /meals/1 or /meals/1.json
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to meal_url(@meal), notice: 'Meal was successfully updated.' }
+        format.html { redirect_to meal_url(@meal)
         format.json { render :show, status: :ok, location: @meal }
       else
         format.html { render :edit, status: :unprocessable_entity }

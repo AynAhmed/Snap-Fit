@@ -55,7 +55,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
 
     if @goal.update(goal_params)
-      redirect_to @goal,  notice: 'Meals logged successfully.'
+      redirect_to @goal
 
     else
       puts "Update failed. Errors: #{goal.errors.full_messages.inspect}"
