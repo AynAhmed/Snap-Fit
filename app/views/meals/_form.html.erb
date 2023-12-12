@@ -1,25 +1,27 @@
-
-
 <!-- app/views/meals/form.html.erb -->
-<p style="color: green"><%= notice %></p>
+<div style="display: flex; justify-content: center; align-items: center; ">
+  <div style="border: 2px solid black; padding: 20px; border-radius: 10px; width: 50%; background-color:white">
+    <p style="color: green;"><%= notice %></p>
 
-<%= form_with(model: @meal, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :For %>
-    <%= form.hidden_field :log_date, value: Date.current %>
-  <span><%= Date.current %></span>
-  </div>
-  
-  <div class="field">
-    <%= form.label :meal_type %>
-    <%= form.select :meal_type, ['Breakfast', 'Lunch', 'Dinner', 'Snacks'] %>
-  </div>
+    <%= form_with(model: @meal, local: true) do |form| %>
+      <div class="field">
+        <%= form.label :For %>
+        <%= form.hidden_field :log_date, value: Date.current %>
+        <span><%= Date.current %></span>
+      </div>
 
-  <div class="field">
-    <%= form.label :user_input, "Enter your meal:" %>
-    <br>
-    <%= form.text_area :user_input, placeholder: "e.g., 2 pancakes" %>
-  </div>
+      <div class="field">
+        <%= form.label :meal_type %>
+        <%= form.select :meal_type, ['Breakfast', 'Lunch', 'Dinner', 'Snacks'] %>
+      </div>
 
-  <%= form.submit %>
-<% end %>
+      <div class="field">
+        <%= form.label :user_input, "Enter your meal:" %>
+        <br>
+        <%= form.text_area :user_input, placeholder: "e.g., 2 pancakes" %>
+      </div>
+
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>

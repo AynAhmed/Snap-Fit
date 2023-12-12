@@ -1,17 +1,22 @@
 <!-- app/views/weight_logs/new.html.erb -->
 
-<%= form_with(model: @weight_log, local: true) do |form| %>
-    <div class="field">
-      <%= form.label :log_date %>
-      <%= form.date_field :log_date, required: true %>
-    </div>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <div style="border: 2px solid black; padding: 20px; border-radius: 10px; width: 50%; background-color:white ">
+    <%= form_with(model: @weight_log, local: true) do |form| %>
+      <div class="field">
+        <%= form.label :log_date %>
+        <%= form.date_field :log_date, required: true %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :weight%>
+        <%= form.number_field :weight, step: 0.1, required: true %>
+      </div>
     
-    <div class="field">
-      <%= form.label :weight %>
-      <%= form.number_field :weight, step: 0.1, required: true %>
-    </div>
-  
-    <%= form.submit 'Log Weight' %>
-  <% end %>
-  
-  <%= link_to "Previously logged", weight_logs_path %>
+      <%= form.submit 'Log Weight' %>
+      
+    <% end %>
+    <br>
+    <%= link_to "Previously logged", weight_logs_path %>
+  </div>
+</div>

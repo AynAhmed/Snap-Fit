@@ -6,6 +6,7 @@
   <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
 </ul>
 <br>
+<h1>Edit Log</h1>
 <%= render 'form', weight_log: @weight_log %>
 
 

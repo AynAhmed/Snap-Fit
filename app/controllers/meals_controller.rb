@@ -68,7 +68,7 @@ class MealsController < ApplicationController
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to meal_url(@meal)
+        format.html { redirect_to meal_url(@meal)}
         format.json { render :show, status: :ok, location: @meal }
       else
         format.html { render :edit, status: :unprocessable_entity }

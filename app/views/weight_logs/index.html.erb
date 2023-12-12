@@ -5,32 +5,33 @@
   <li><%= link_to 'Goals', goals_path %></li>
   <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
 </ul>
-
+<br>
 <h1>Weight Logs</h1>
-
-<table>
+<div class="weight-table-container">
+<table class="styled-table">
   <thead>
     <tr>
       <th>Log Date</th>
       <th>Weight</th>
-      
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% @weight_logs.each do |weight_log| %>
       <tr>
-        <td><%= link_to weight_log.log_date, weight_log  %></td>
-        <td><%= weight_log.weight %></td>
-
+        <td><%= link_to weight_log.log_date, weight_log %></td>
+        <td><%= weight_log.weight %> lb</td>
         <td><%= link_to "✘", weight_log_path(weight_log), data: {
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"
-          } %>
-        </td>
+          } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Weight Log', new_weight_log_path %>
+</div>
+<div class = "logWeightbtn">
+
+<%= link_to 'New Weight Log', new_weight_log_path%>
+</div>

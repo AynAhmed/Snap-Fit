@@ -1,5 +1,6 @@
 <!-- app/views/goals/_form.html.erb -->
-
+<div style="display: flex; justify-content: center; align-items: center;">
+<div style="border: 2px solid black; padding: 20px; border-radius: 10px; width: 50%; background-color:white ">
 <%= form_for(@goal) do |form| %>
   <% if @goal.errors.any? %>
   <div id="error_explanation">
@@ -35,4 +36,8 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <%= link_to 'Back to Goals', goals_path %>
 <% end %>
+
+</div>
+</div>
