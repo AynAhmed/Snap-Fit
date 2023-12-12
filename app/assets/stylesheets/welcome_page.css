@@ -1,4 +1,30 @@
+.welcomeContainer {
+    margin-top: 100px;
+    border: solid black 2px;
+padding-top: 30px;
+padding-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto; /* Center the container */
+    margin-top: 12.5rem;
+  }
+  
+  .Startbtn {
+    text-align: center;
+    background-color: #e9b01c;
+    border-radius: 30px;
+    border: solid black 2px;
+    padding: 10px;
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto; /* Center the button horizontally */
+    width: fit-content; /* Adjust the width as needed */
+  }
+  
+.welcomeImg{
 
-.GetStartedBtn{
+    text-align: center;
 
 }
+
+

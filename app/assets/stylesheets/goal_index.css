@@ -75,7 +75,7 @@
 .goalInfo p {
   color: #E9B01C; 
   font-size: 22px;
-  margin-top: 4rem;
+  margin-top: 1rem;
   margin-left: 15px;
 }
 
@@ -87,4 +87,10 @@
  margin-left: 20px;
  margin-right: 20px;
   text-align: center;
+}
+
+.goalsEditPen{
+float: right;
+margin-right: 15px;
+font-size: 25px;
 }

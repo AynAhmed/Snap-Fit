@@ -14,8 +14,7 @@
 
 
     <div class="goalsSection">
-    
-   
+
       <table class="goalsTable">
         <tr>
           <th>Goal Type</th>
@@ -36,11 +35,12 @@
       </table>
     </div>
 
-  
     <div class="goalInfo">
-    <h6><%=@lb_remaining %>LBS From Target Goal</h6>
-      <p>Started goal <%= @days_since_goal_updated %> days ago</p>
-     </div>
+  <p class = "goalsEditPen"><%= link_to '✐', edit_goal_path(@goals) %></p>
+  <h6><%= @lb_remaining %>LBS From Target Goal</h6>
+  <p>Started goal <%= @days_since_goal_updated %> days ago</p>
+</div>
+
 
 </div>
 

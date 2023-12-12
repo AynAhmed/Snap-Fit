@@ -20,7 +20,6 @@ class GoalsController < ApplicationController
   # GET /goals/1 or /goals/1.json
   def show
     @goal = Goal.find(params[:id])
-   
   end
 
   # GET /goals/new
@@ -30,7 +29,11 @@ class GoalsController < ApplicationController
   end
 
   # GET /goals/1/edit
-  def edit; end
+  def edit
+    @goal = Goal.find(params[:id])
+  end
+
+ 
 
   # POST /goals or /goals.json
   def create
@@ -47,6 +50,18 @@ class GoalsController < ApplicationController
     end
   end
 
+# PATCH/PUT /goals/1 or /goals/1.json
+  def update
+    @goal = Goal.find(params[:id])
+
+    if @goal.update(goal_params)
+      redirect_to @goal,  notice: 'Meals logged successfully.'
+
+    else
+      puts "Update failed. Errors: #{goal.errors.full_messages.inspect}"
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def goal_start_date
     @goal_start_date = current_user.goal.created_at.to_date
@@ -67,19 +82,8 @@ end
     render json: weight_logs.map { |log| { log_date: log.log_date, weight: log.weight } }
   end
 
-  # PATCH/PUT /goals/1 or /goals/1.json
-  def update
-    respond_to do |format|
-      if @goal.update(goal_params)
-        format.html { redirect_to goal_url(@goal), notice: 'Goal was successfully updated.' }
-        format.json { render :show, status: :ok, location: @goal }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @goal.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
+  
+ 
 
 
   # DELETE /goals/1 or /goals/1.json

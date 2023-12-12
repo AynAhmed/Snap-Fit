@@ -1,8 +1,11 @@
 <!-- app/views/welcome/index.html.erb -->
 
-<%= image_tag("logo.png", alt: "Fitness App Logo") %>
+<div class= "welcomeContainer">
+  <div class = "welcomeImg">
+  <%= image_tag("logo.png", alt: "Fitness App Logo") %>
+  </div>
 
-<% if user_signed_in? %>
-<% else %>
-  <%= link_to 'Get Started', new_user_registration_path, class: 'GetStartedBtn' %>
-<% end %>
+  <div class = "Startbtn">
+      <%= link_to 'Get Started', new_user_registration_path, class: 'GetStartedBtn' %>
+  </div>
+</div>

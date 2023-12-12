@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :workouts
 
   resources :goals
-  resources :weight_logs, only: [:new, :create]
+  resources :weight_logs
   get '/goals/weight_logs_data', to: 'goals#weight_logs_data'
   
   # Defines the root path route ("/")

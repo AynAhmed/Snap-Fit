@@ -11,16 +11,14 @@
     max-width: 800px;
     background-color: #F8E6A6;
   }
-body{
-    position: relative;
+  body{
+      position: relative;
+  }
 
-
-}
- 
 .WholeCard{
 
     position: absolute;
- 
+
     left: 0;
     right: 0;
 
