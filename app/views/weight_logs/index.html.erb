@@ -7,10 +7,12 @@
 </ul>
 <br>
 <h1>Weight Logs</h1>
+<div class="table-container">
 <div class="weight-table-container">
 <table class="styled-table">
   <thead>
     <tr>
+      <th></th>
       <th>Log Date</th>
       <th>Weight</th>
       <th></th>
@@ -18,7 +20,14 @@
   </thead>
   <tbody>
     <% @weight_logs.each do |weight_log| %>
-      <tr>
+
+        <td>
+  <% if weight_log.image.attached? %>
+    <%= image_tag weight_log.image, style: "width: 50px; height: 50px; border-radius: 1px;" %>
+  <% else %>
+  <% end %>
+</td>
+
         <td><%= link_to weight_log.log_date, weight_log %></td>
         <td><%= weight_log.weight %> lb</td>
         <td><%= link_to "✘", weight_log_path(weight_log), data: {
@@ -34,4 +43,5 @@
 <div class = "logWeightbtn">
 
 <%= link_to 'New Weight Log', new_weight_log_path%>
+</div>
 </div>

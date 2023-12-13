@@ -49,6 +49,6 @@ class WeightLogsController < ApplicationController
   private
 
   def weight_log_params
-    params.require(:weight_log).permit(:weight, :log_date)
+    params.require(:weight_log).permit(:weight, :log_date, :image)
   end
 end

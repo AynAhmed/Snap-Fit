@@ -12,7 +12,11 @@
         <%= form.label :weight%>
         <%= form.number_field :weight, step: 0.1, required: true %>
       </div>
-    
+
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+      <br>
+      <br>
       <%= form.submit 'Log Weight' %>
       
     <% end %>

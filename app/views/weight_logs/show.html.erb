@@ -5,21 +5,29 @@
   <li><%= link_to 'Goals', goals_path %></li>
   <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
 </ul>
+
 <h1>Log For -   <%= @weight_log.log_date %></h1>
 <div style="display: flex; justify-content: center; align-items: center;">
-  <div style="border: 2px solid black; padding: 20px; border-radius: 10px; width: 50%; background-color:white ">
+  <div style="border: 2px solid black; padding: 20px; border-radius: 10px; width: 50%; background-color:white; ">
+  
+<div style="display: flex;">
+  <div>
+    <%= image_tag @weight_log.image, style: "width: 300px; height: 300px; border-radius: 8px; border: solid black 2px;"%>
+  </div>
 
-  <p>
-  <strong>Date:</strong>
-  <%= @weight_log.log_date %>
-</p>
+  <div style="margin-left: 20px;">
+    <p>
+      <strong>Date:</strong>
+      <%= @weight_log.log_date %>
+    </p>
 
-  <p>
-  <strong>Weight:</strong>
-  <%= @weight_log.weight %>
-</p>
-
-
+    <p>
+      <strong>Weight:</strong>
+      <%= @weight_log.weight %>
+    </p>
+  </div>
+</div>
+<br>
 
 <%= link_to 'Previously logged', weight_logs_path %> |
 <%= link_to '✐', edit_weight_log_path(@weight_log) %>
