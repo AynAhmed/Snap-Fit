@@ -92,5 +92,26 @@
       margin-right: 0; /* Remove margin for stacking */
       margin-bottom: 20px; /* Add margin for spacing */
     }
+   
   }
   
+ .btnCard .mealShowBackbtn{
+  border-radius: 5px;
+  background-color: #c3d8db;
+  font-family: 'Nanum Brush Script', cursive;
+  font-size: 22px;
+  color: black;
+  width: 57.4rem;
+  border: solid black 2px;
+  cursor: pointer;
+  padding: 8px 171px;
+
+ }
+
+ .btnCard  .mealShowBackbtn:hover{
+  background-color: #d9e9ec;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: background-color 0.5s ease;
+}
+

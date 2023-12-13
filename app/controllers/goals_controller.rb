@@ -42,7 +42,7 @@ class GoalsController < ApplicationController
   
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to dashboard_index_path, notice: 'Goal was successfully created.' }
+        format.html { redirect_to dashboard_index_path }
       else
         puts "Errors: #{@goal.errors.full_messages.inspect}"
         format.html { render :new, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
 
     if @goal.update(goal_params)
-      redirect_to @goal
+      redirect_to goals_path 
 
     else
       puts "Update failed. Errors: #{goal.errors.full_messages.inspect}"

@@ -1,6 +1,7 @@
 
 <!-- app/views/workouts/_form.html.erb -->
-
+<div style="display: flex; justify-content: center; align-items: center; ">
+  <div style="border: 2px solid black; padding: 20px; border-radius: 10px; width: 50%; background-color:white">
 <%= form_with(model: @workout, url: workouts_path, method: :post) do |form| %>
     <div class="field">
     <%= form.label :For %>
@@ -14,6 +15,8 @@
     <%= form.text_area :user_input, placeholder: "e.g., swam for 1 hour and ran for 30 minutes" %>
   </div>
 
-
+<br>
   <%= form.submit %>
 <% end %>
+</div>
+</div>

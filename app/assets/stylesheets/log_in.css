@@ -1,0 +1,26 @@
+
+.page-container2 {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  border-radius: 8px;
+  padding:80px ;
+  box-shadow: 5px 10px #888888;
+}
+
+h2 {
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 15px;
+  font-size: x-large;
+
+}
+.new_user {
+  text-align: left;
+}
+.actions {
+
+  margin-bottom: 25px;
+
+}

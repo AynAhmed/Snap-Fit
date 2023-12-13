@@ -16,7 +16,7 @@ body{
 }
 .navbar {
     list-style-type: none;
-   
+
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -24,30 +24,30 @@ body{
     display: flex;
     justify-content: flex-end; /* Align items to the right */
   }
-  
+
   .navbar li {
     margin-left: 25px; /* Optional: Adjust spacing between items */
     margin-top: 1px;
     font-size: 25px;
 }
-  
+
   .navbar li a {
     display: block;
     color: black;
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+
   .navbar li a:hover {
     color: #7F7ECB;
     text-decoration: underline;
   }
-  
+
   .navbar .sign-btn {
     float: right;
     margin-top: 8px;
   }
-  
+
 .navbar .sign-btn {
     margin-left: 2rem;
     margin-right: 7px;
@@ -66,6 +66,6 @@ body{
   .navbar .sign-btn:hover {
     background-color: #000000;
     color:white;
-    
+
   }
 
