@@ -1,11 +1,12 @@
 /* CSS Styles for the table */
-.styled-table {
-    width: 60%;
+div .styled-table {
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     border: 2px solid black; /* Add a black border around the table */
     background-color: white; /* Set the background color to white */
   }
+
   
   .styled-table th,
   .styled-table td {
@@ -37,11 +38,45 @@
     background-color: #0056b3;
   }
   .weight-table-container{
+
+    justify-content: center;
+  }
+
+  .table-container{
     display: flex; 
-    justify-content: center; 
-    align-items: center;
+    justify-content: center;
   }
 
   .logWeightbtn{
     margin-left: 16.6rem ;
   }
+  /* CSS Styles for the table */
+  .table-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+  }
+  
+  .styled-table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 2px solid black;
+    background-color: white;
+    /* ... Your other table styles ... */
+  }
+  
+  /* Additional CSS for the caption */
+  .table-caption {
+    text-align: center; /* Center-align the text */
+    margin-top: 20px; /* Add spacing between the table and caption */
+  }
+  
+  /* CSS for the "New Weight Log" button */
+  .logWeightbtn {
+    margin-left: 0; /* Remove the margin */
+    text-align: left; /* Align text to the left */
+    padding-left: 5px; /* Add some left padding for spacing */
+  
+}
+  

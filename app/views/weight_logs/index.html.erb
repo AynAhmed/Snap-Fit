@@ -6,42 +6,42 @@
   <%= button_to user_signed_in? ? 'Sign Out' : 'Sign In', user_signed_in? ? destroy_user_session_path : new_user_session_path, method: :delete, class: 'sign-btn' %>
 </ul>
 <br>
+
 <h1>Weight Logs</h1>
-<div class="table-container">
-<div class="weight-table-container">
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Log Date</th>
-      <th>Weight</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @weight_logs.each do |weight_log| %>
-
-        <td>
-  <% if weight_log.image.attached? %>
-    <%= image_tag weight_log.image, style: "width: 50px; height: 50px; border-radius: 1px;" %>
-  <% else %>
-  <% end %>
-</td>
-
-        <td><%= link_to weight_log.log_date, weight_log %></td>
-        <td><%= weight_log.weight %> lb</td>
-        <td><%= link_to "✘", weight_log_path(weight_log), data: {
-            turbo_method: :delete,
-            turbo_confirm: "Are you sure?"
-          } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-</div>
-<div class = "logWeightbtn">
-
-<%= link_to 'New Weight Log', new_weight_log_path%>
-</div>
+<div style="display: flex; justify-content: center; align-items: center;">
+<div style="width: 50%; ">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Log Date</th>
+          <th>Weight</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @weight_logs.each do |weight_log| %>
+          <tr>
+            <td>
+              <% if weight_log.image.attached? %>
+                <%= image_tag weight_log.image, style: "width: 50px; height: 50px; border-radius: 1.8px;" %>
+              <% else %>
+              <% end %>
+            </td>
+            <td><%= link_to weight_log.log_date, weight_log %></td>
+            <td><%= weight_log.weight %> lb</td>
+            <td>
+              <%= link_to "✘", weight_log_path(weight_log), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="logWeightbtn">
+      <%= link_to 'New Weight Log', new_weight_log_path %>
+    </div>
+  </div>
 </div>
