@@ -97,8 +97,8 @@ class MealsController < ApplicationController
     url = 'https://trackapi.nutritionix.com/v2/natural/nutrients'
     headers = {
       'Content-Type': 'application/json',
-      'x-app-id': 'cad540cc',
-      'x-app-key': '88f4291745ffbc009140800ce6cf337f'
+      'x-app-id': ENV['NUTRITIONIX_APP_ID'],
+      'x-app-key': ENV['NUTRITIONIX_APP_KEY']
     }
 
     payload = {
