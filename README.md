@@ -47,4 +47,8 @@ To get started with Snap Fit, simply [visit website](https://youtu.be/7Nb-N5wHuV
 6.  **Log Your Weight:**
      -   To track your weight changes over time, navigate to the "scale" icon on the home page.
     -   Enter your weight for the day and also attach an image if you would like/ 
-    -   Click "Log Weight"  and Snap Fit will them record your weight entry and display it in the "Previously logged" section. 
+    -   Click "Log Weight"  and Snap Fit will them record your weight entry and display it in the "Previously logged" section.
+
+ ## Authors
+
+Snap Fit was created by Aynahmed
