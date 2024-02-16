@@ -13,7 +13,7 @@ Snap Fit is a calorie and fitness tracking application designed to simplify the 
 -   Devise ( User Auth) 
 
 ## Getting Started:
-To get started with Snap Fit, simply [visit our website](https://youtu.be/7Nb-N5wHuVI) and sign up for an account. Once logged in, you can begin tracking your workouts and meals effortlessly.
+To get started with Snap Fit, simply [visit website](https://youtu.be/7Nb-N5wHuVI) and sign up for an account. Once logged in, you can begin tracking your workouts and meals effortlessly.
 
 ## User Guide 
 
