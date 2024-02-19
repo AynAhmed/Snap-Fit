@@ -12,8 +12,8 @@ Snap Fit is a calorie and fitness tracking application designed to simplify the 
 -   Chart.js
 -   Devise ( User Auth) 
 
-## Getting Started:
-To get started with Snap Fit, simply [visual tutorial](https://youtu.be/7Nb-N5wHuVI) and sign up for an account. Once logged in, you can begin tracking your workouts and meals effortlessly.
+## visual tutorial:
+To get a look at Snap Fit, visit the [visual tutorial](https://youtu.be/7Nb-N5wHuVI) and watch a walk through. You can also clone this repo and view it on your local machine. Once logged in, you can begin tracking your workouts and meals effortlessly.
 
 ## User Guide 
 
