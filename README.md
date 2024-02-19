@@ -3,7 +3,7 @@
 Snap Fit is a calorie and fitness tracking application designed to simplify the process of tracking workouts and meals. The primary challenge addressed by Snap Fit is the complexity and overwhelming user experience associated with tracking workouts and meals. Many individuals struggle to consistently log their exercise routines and dietary intake, leading to difficulties in achieving their fitness goals. Snap Fit aims to simplify the process of tracking workouts and meals by providing a user-friendly interface for data entry. The application focuses on creating an intuitive and less overwhelming experience for users, making it easier for them to stay consistent with their fitness routine.
 
 
-# **Technologies used:**
+# **Technologies Used:**
 -   Ruby on Rails
 -   CSS
 -   HTML
