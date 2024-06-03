@@ -19,7 +19,7 @@ To get a look at Snap Fit, visit the [visual tutorial](https://youtu.be/7Nb-N5wH
 
 1.  **Sign Up or Log In:**
     
-    -   When you first arrive at the site you be greated with a "get started" page. If you're a new user, click on the "Sign Up" button.
+    -   When you first arrive at the site you be greeted with a "get started" page. If you're a new user, click on the "Sign Up" button.
     -   If you're an existing user, click on the "Log In" button and enter your email address and password to access your account.
     
 2.  **Dashboard Overview:**
